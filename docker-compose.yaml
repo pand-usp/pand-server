@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    ports:
+      # API port
+      - "8080:8080"
+      # Debug port
+      - "5005:5005"
+    volumes:
+      - /var/log/pand:/var/log/pand
+    environment:
+      - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo:27017/pand
+      - JAVA_DEBUG=true
+      - JAVA_DEBUG_PORT=5005
+  mongo:
+    image: mongo:4
