@@ -15,3 +15,5 @@ services:
       - JAVA_DEBUG_PORT=5005
   mongo:
     image: mongo:4
+    volumes:
+      - ${PWD}/data:/data/db
