@@ -19,7 +19,6 @@ public class PlacesService {
     }
 
     public String testService() {
-        System.out.println("test debugger");
         return places.test();
     }
 }
