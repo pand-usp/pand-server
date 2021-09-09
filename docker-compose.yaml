@@ -18,3 +18,5 @@ services:
     image: mongo:4
     volumes:
       - ${PWD}/data:/data/db
+    ports:
+      - "27017:27017"
