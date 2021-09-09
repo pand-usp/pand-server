@@ -13,6 +13,7 @@ services:
       - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo:27017/pand
       - JAVA_DEBUG=true
       - JAVA_DEBUG_PORT=5005
+      - JAVA_ENABLE_DEBUG=true
   mongo:
     image: mongo:4
     volumes:
