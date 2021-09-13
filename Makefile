@@ -1,8 +1,7 @@
 build:
 	@./mvnw package
 
-dev: stop
-	@docker-compose up -d mongo
+dev: stop db
 	@./mvnw compile quarkus:dev
 
 start: setup
@@ -15,6 +14,9 @@ clean:
 	@docker-compose stop
 	@docker-compose rm -f
 	@./mvnw clean
+
+db:
+	@docker-compose up -d mongo
 
 setup:
 	@echo "Creating network 'development'..."
