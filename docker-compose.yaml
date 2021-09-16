@@ -10,6 +10,8 @@ services:
       - ${PWD}/data:/data/db
     environment:
       - HOST=0.0.0.0
+    ports:
+      - "27017:27017"
   api:
     depends_on: 
       - mongo
