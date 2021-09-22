@@ -6,10 +6,10 @@ import br.usp.each.pand.repository.PlacesRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.util.List;
 
 @ApplicationScoped
 public class PlacesService {
-
 
     PlacesRepository places;
 
@@ -23,7 +23,11 @@ public class PlacesService {
         places.insertTest(place);
     }
 
-    public String testService() {
-        return places.test();
+    public List<Place> listAll() {
+        return places.findAll().list();
+    }
+
+    public List<Place> findPlaces(String query) {
+        return places.findByName(query);
     }
 }
