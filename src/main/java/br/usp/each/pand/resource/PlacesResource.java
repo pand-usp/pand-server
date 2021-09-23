@@ -8,6 +8,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.util.List;
 
 @Path("/place")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,9 +18,9 @@ public class PlacesResource {
     PlacesService placesService;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return placesService.testService();
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Place> getPlaces(@QueryParam("q") String query) {
+        return placesService.findPlaces(query);
     }
 
     @POST
