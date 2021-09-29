@@ -9,7 +9,7 @@ import java.util.List;
 @ApplicationScoped
 public class PlacesRepository implements PanacheMongoRepository<Place> {
 
-    public void insertTest(Place place) {
+    public void insertPlace(Place place) {
         this.persist(place);
     }
 

@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 @ApplicationScoped
 public class PlacesService {
@@ -23,8 +22,11 @@ public class PlacesService {
     }
 
 
-    public void insertTest(Place place) {
-        places.insertTest(place);
+    public ObjectId insertPlace(Place place) {
+        ObjectId id = new ObjectId();
+        place.id = id;
+        places.insertPlace(place);
+        return id;
     }
 
     public List<Place> listAll() {

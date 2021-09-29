@@ -2,6 +2,7 @@ package br.usp.each.pand.resource;
 
 import br.usp.each.pand.model.Place;
 import br.usp.each.pand.service.PlacesService;
+import org.bson.types.ObjectId;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -43,7 +44,7 @@ public class PlacesResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insertTest(Place place) {
-        placesService.insertTest(place);
-        return Response.created(URI.create("/")).build();
+        ObjectId id = placesService.insertPlace(place);
+        return Response.created(URI.create("/" + id)).build();
     }
 }
