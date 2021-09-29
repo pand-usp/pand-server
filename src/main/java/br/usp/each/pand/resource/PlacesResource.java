@@ -23,6 +23,23 @@ public class PlacesResource {
         return placesService.findPlaces(query);
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findPlaceById(@PathParam("id") String id) {
+        try {
+
+            Place place = placesService.findPlaceById(id);
+            return Response.ok()
+                    .entity(place)
+                    .build();
+        } catch (NotFoundException e) {
+            return Response.status(404)
+                    .entity("Place not found")
+                    .build();
+        }
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insertTest(Place place) {
