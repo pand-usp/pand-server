@@ -10,5 +10,11 @@ public class Place {
 
     public String name;
 
-    public String description;
+    public String address;
+
+    public String imageURL;
+
+    public Accessibility accessibility;
+
+    public Rating rating;
 }
