@@ -1,4 +1,4 @@
-package main.java.br.usp.each.pand.model;
+package br.usp.each.pand.model;
 
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import org.bson.types.ObjectId;

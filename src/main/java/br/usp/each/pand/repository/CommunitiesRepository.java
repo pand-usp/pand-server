@@ -1,8 +1,7 @@
-package main.java.br.usp.each.pand.repository;
+package br.usp.each.pand.repository;
 
-import br.usp.each.pand.model.Place;
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
-import main.java.br.usp.each.pand.model.Community;
+import br.usp.each.pand.model.Community;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
