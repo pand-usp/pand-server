@@ -1,6 +1,8 @@
 package br.usp.each.pand.resource;
 
+import br.usp.each.pand.model.Community;
 import br.usp.each.pand.model.Place;
+import br.usp.each.pand.service.CommunitiesService;
 import br.usp.each.pand.service.PlacesService;
 import org.bson.types.ObjectId;
 
@@ -17,6 +19,9 @@ public class PlacesResource {
 
     @Inject
     PlacesService placesService;
+
+    @Inject
+    CommunitiesService communitiesService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -43,7 +48,7 @@ public class PlacesResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response insertTest(Place place) {
+    public Response insert(Place place) {
         ObjectId id = placesService.insertPlace(place);
         return Response.created(URI.create("/" + id)).build();
     }
