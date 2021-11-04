@@ -3,9 +3,11 @@ package br.usp.each.pand.service;
 import br.usp.each.pand.model.User;
 import br.usp.each.pand.repository.UserRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.Optional;
 
+@ApplicationScoped
 public class UserService {
     UserRepository users;
 
