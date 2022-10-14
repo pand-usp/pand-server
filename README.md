@@ -8,10 +8,30 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 You can run your application in dev mode that enables live coding using:
 ```shell script
-./mvnw compile quarkus:dev
+make setup
+make dev
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+
+
+## Accessing the Mongo DB pand
+
+You can access the Mongo DB using:
+```shell script
+make mongo
+```
+
+You can see the db values using:
+```shell script
+use pand
+db.place.find()
+```
+
+you can add a new place using:
+```shell script
+curl -X POST --verbose http://localhost:3000/place --data-raw '{"name": "Sorvetop", "address": "Rua Bolo de Goiaba, 525", "imageURL": "https://casa.abril.com.br/wp-content/uploads/2018/02/sorveteria-colombiana.jpg", "rating": {"fisica": 5}, "accessibility": {"visual": false, "auditiva": true, "fisica": false}}' -H 'content-type: application/json'
+```
 
 ## Packaging and running the application
 
